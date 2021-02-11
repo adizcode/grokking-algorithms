@@ -8,9 +8,13 @@ class Implementation {
 
         // While the list hasn't been narrowed down to one element
         while (low <= high) {
-
+            
+            // Caution! The following line of code is responsible for causing the infamous overflow bug:
+            // int mid = (low + high) / 2;
+            // Use this equivalent statement instead:
+            int mid = low + ((high - low) / 2);
+            
             // Check the middle element
-            int mid = (low + high) / 2;
             int guess = list.get(mid);
 
             // Found the item
