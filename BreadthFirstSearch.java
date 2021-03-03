@@ -22,7 +22,7 @@ public class Graph {
     public boolean addEdge(int source, int dest) {
 
         // Prevent going out of bounds
-        if (source < numOfVertices) {
+        if (source < numOfVertices && dest < numOfVertices) {
 
             // Add the adjacency pair to the graph
             adjacencyList[source].add(dest);
